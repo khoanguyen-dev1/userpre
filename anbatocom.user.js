@@ -88,7 +88,7 @@
         const step1ClickInterval = setInterval(clickStep1, 2000);
     }
      if (currentUrl.includes("https://ads.luarmor.net/")) {
-    console.log("Current URL contains 'https://ads.luarmor.net/'");
+     logToContainer('Đang Bypass');
 
     setTimeout(() => {
         var nextButton = document.querySelector("#nextbtn");
@@ -108,16 +108,14 @@
 
                     if (thirdLink) {
                         const bypassUrl = `https://api.solar-x.top/api/v3/premium/bypass?url=${encodeURIComponent(thirdLink)}&apikey=SLR-05C917294314C6F08A176D714842E6FE6E5E6013AB4073C4DFB125949A339B7C198741AF3F7D9B06039D66D18250681F03C282F6668F656F2E69B55A94744784-khoanontop`;
-                        console.log("Bypass URL generated:", bypassUrl);
-
+                    
                         // Now, fetch the result from the API (bypassUrl)
                         fetch(bypassUrl)
                             .then(response => response.json())  // Assuming the response is JSON
                             .then(data => {
-                                console.log("API result:", data);
                                 // If the API returns a URL or a specific result, open it
                                 if (data.result) {
-                                    window.location.href = data.result;  // Open the result URL from the API
+                                    window.location.href = data.result;  
                                 } else {
                                     console.log("No result URL found in API response.");
                                 }
